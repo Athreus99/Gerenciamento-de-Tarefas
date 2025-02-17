@@ -27,7 +27,7 @@ const TodoList = () => {
       const data = await response.json();
       setTasks(data);
       setLoading(false);
-    } catch (err) {
+    } catch  {
       setError('Erro ao carregar tarefas');
       setLoading(false);
     }
@@ -46,7 +46,7 @@ const TodoList = () => {
       const data = await response.json();
       setTasks([...tasks, data]);
       setNewTask('');
-    } catch (err) {
+    } catch  {
       setError('Erro ao adicionar tarefa');
     }
   };
@@ -61,7 +61,7 @@ const TodoList = () => {
       });
       const updatedTask = await response.json();
       setTasks(tasks.map(t => t.id === id ? updatedTask : t));
-    } catch (err) {
+    } catch  {
       setError('Erro ao atualizar tarefa');
     }
   };
@@ -72,7 +72,7 @@ const TodoList = () => {
         method: 'DELETE',
       });
       setTasks(tasks.filter(t => t.id !== id));
-    } catch (err) {
+    } catch  {
       setError('Erro ao deletar tarefa');
     }
   };
