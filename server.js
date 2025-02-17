@@ -6,7 +6,6 @@ const app = express();
 
 // Lista de origens permitidas
 const allowedOrigins = [
-  'http://localhost:3000',
   'https://gerenciamento-de-tarefas-seven.vercel.app/'  // Adicione seu domínio da Vercel aqui
 ];
 
