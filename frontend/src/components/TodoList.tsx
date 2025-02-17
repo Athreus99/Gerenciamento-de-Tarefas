@@ -21,7 +21,7 @@ const TodoList = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/tasks');
+      const response = await fetch('https://gerenciamento-de-tarefas-seven.vercel.app/');
       const data = await response.json();
       setTasks(data);
       setLoading(false);
