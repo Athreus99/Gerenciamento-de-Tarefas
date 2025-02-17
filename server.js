@@ -7,7 +7,7 @@ const app = express();
 // Lista de origens permitidas
 const allowedOrigins = [
   'http://localhost:3000',
-  ''  // Adicione seu domínio da Vercel aqui
+  'https://gerenciamento-de-tarefas-6psf.onrender.com'  // Adicione seu domínio da Vercel aqui
 ];
 
 // Configuração CORS
