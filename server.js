@@ -6,6 +6,7 @@ const app = express();
 
 // Lista de origens permitidas
 const allowedOrigins = [
+  'http://localhost:3000',
   'https://gerenciamento-de-tarefas-seven.vercel.app/'  // Adicione seu domínio da Vercel aqui
 ];
 
@@ -27,15 +28,13 @@ app.use(cors({
 
 app.use(express.json());
 
-// Array para armazenar as tarefas
+// Resto do seu código do servidor...
 let tasks = [];
 
-// GET - Listar todas as tarefas
 app.get('/api/tasks', (req, res) => {
   res.json(tasks);
 });
 
-// POST - Criar nova tarefa
 app.post('/api/tasks', (req, res) => {
   const { title } = req.body;
   
@@ -54,7 +53,6 @@ app.post('/api/tasks', (req, res) => {
   res.status(201).json(newTask);
 });
 
-// PUT - Atualizar tarefa
 app.put('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   const { completed } = req.body;
@@ -73,7 +71,6 @@ app.put('/api/tasks/:id', (req, res) => {
   res.json(tasks[taskIndex]);
 });
 
-// DELETE - Deletar tarefa
 app.delete('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   
